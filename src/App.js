@@ -1,9 +1,10 @@
 import './App.css';
-import { Navbar } from './components/Navbar/Navbar';
+import ExpenseManager from './components/ExpenseManager';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Navbar/>
+    <ExpenseManager/>
   );
 }
 
