@@ -8,7 +8,7 @@ const Header = ({expenses, income}) => {
             <br/>
             <div>
                 <div className='display-6 font-weight-400'>YOUR BALANCE</div>
-                <div className='display-6'>&#8377; {income + expenses > 0 ? "+" : income + expenses === 0 ? "" : "-"} {(income + expenses)}</div>
+                <div className='display-6'>&#8377; {income + expenses > 0 ? "+" : income + expenses < 0 ? "-" : ""} {(income + expenses)}</div>
             </div>
             <br/>
             <div className='d-flex'>

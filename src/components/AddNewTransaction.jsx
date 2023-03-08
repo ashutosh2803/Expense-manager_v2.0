@@ -18,6 +18,8 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
             handleExpense(Number(amount));
         }
         handleData(payload);
+        setTitle("");
+        setAmount(0);
     }
     return (
         <div>
