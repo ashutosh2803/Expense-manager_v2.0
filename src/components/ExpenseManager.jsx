@@ -15,15 +15,16 @@ const ExpenseManager = () => {
     const handleIncome = value => setIncome(value + income);
     const handleExpense = value => setExpenses(value + expenses);
     const handleData = payload => setData([...data, payload]);
-    const handleDelete = e => {
-        let id = e.target.value;
+    const handleDelete = id => {
+        console.log("called");
+        // let id = e.target.value;
         let item = data?.filter((item) => item.id === id);
         
-        let amount = Number(item[0].amount);
-
+        let amount = Number(item[0].updated_amount);
+        // let type = item[0].type;
         if (amount > 0) {
             handleIncome(-amount);
-        } else {
+        } else{
             handleExpense(-amount);
         }
         setData(data?.filter((item) => item.id !== id));

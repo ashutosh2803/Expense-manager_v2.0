@@ -1,14 +1,15 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
 
-const Header = ({expenses, income}) => {
+const Header = ({ expenses, income }) => {
+    let balance = income - expenses;
     return (
         <div>
             <div className='display-4 font-weight-bolder'>Expense Tracker</div>
             <br/>
             <div>
                 <div className='display-6 font-weight-400'>YOUR BALANCE</div>
-                <div className='display-6'>&#8377; {income + expenses > 0 ? "+" : income + expenses < 0 ? "-" : ""} {(income + expenses)}</div>
+                <div className='display-6'>&#8377; {income - expenses > 0 ? "+" : income - expenses < 0 ? "" : ""}{(balance)}</div>
             </div>
             <br/>
             <div className='d-flex'>
