@@ -21,6 +21,7 @@ const ExpenseManager = () => {
         let item = data?.filter((item) => item.id === id);
         
         let amount = Number(item[0].updated_amount);
+        console.log(amount);
         // let type = item[0].type;
         if (amount > 0) {
             handleIncome(-amount);

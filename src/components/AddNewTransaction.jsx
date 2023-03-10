@@ -9,14 +9,14 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let updated_amount = type === "income" ? +amount : -amount;
+        // let updated_amount = type === "income" ? +amount : -amount;
+        let updated_amount = amount;
         const payload = {
             id: uuid(),
             title, 
             updated_amount,
             type
         }
-        console.log(payload.updated_amount);
         if (type === "income") {
             handleIncome(Number(updated_amount));
         }
@@ -39,7 +39,7 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label className='display-6'>Amount Type</Form.Label>
-                    <Form.Select onChange={e => setType(e.target.value)} id="amount_type">
+                    <Form.Select value={type} onChange={e => setType(e.target.value)} id="amount_type">
                         <option key="default" value="default">select type</option>
                         <option key="income" value="income">Income</option>
                         <option key="expense" value="expense">Expense</option>

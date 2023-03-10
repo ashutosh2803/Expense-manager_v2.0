@@ -19,10 +19,10 @@ const Header = ({ expenses, income }) => {
                         <Card.Text>{income}</Card.Text>
                     </Card.Body>
                 </Card>
-                <Card>
+                <Card className='mx-2'>
                     <Card.Body>
                         <Card.Title>EXPENSE</Card.Title>
-                        <Card.Text>{expenses}</Card.Text>
+                        <Card.Text>{Math.abs(expenses)}</Card.Text>
                     </Card.Body>
                 </Card>
             </div>
