@@ -8,8 +8,6 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
     const [type, setType] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        // let updated_amount = type === "income" ? +amount : -amount;
         let updated_amount = amount;
         const payload = {
             id: uuid(),
@@ -26,7 +24,7 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
         handleData(payload);
         setTitle("");
         setType("default");
-        setAmount(0);
+        setAmount("Enter Amount...");
     }
     return (
         <div>
