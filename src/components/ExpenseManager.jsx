@@ -17,10 +17,10 @@ const ExpenseManager = () => {
     const handleData = payload => setData([...data, payload]);
     const handleDeleteAll = () => {
         setData([]);
+        setExpenses(0);
+        setIncome(0);
     }
     const handleDelete = id => {
-        console.log("called");
-        // let id = e.target.value;
         let item = data?.filter((item) => item.id === id);
         
         let amount = Number(item[0].updated_amount);
