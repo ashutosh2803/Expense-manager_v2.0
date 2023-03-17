@@ -15,6 +15,9 @@ const ExpenseManager = () => {
     const handleIncome = value => setIncome(value + income);
     const handleExpense = value => setExpenses(value + expenses);
     const handleData = payload => setData([...data, payload]);
+    const handleDeleteAll = () => {
+        setData([]);
+    }
     const handleDelete = id => {
         console.log("called");
         // let id = e.target.value;
@@ -34,7 +37,7 @@ const ExpenseManager = () => {
     return (
         <div className='container w-100 m-auto border border-secondary py-5 bg-light min-vw-50'>
             <Header {...newData} />
-            <History {...newData} handleDelete={handleDelete} />
+            <History {...newData} handleDelete={handleDelete} handleDeleteAll={handleDeleteAll} />
             <AddNewTransaction {...newData} handleData={handleData} handleExpense={handleExpense} handleIncome={handleIncome} />
         </div>
     )
