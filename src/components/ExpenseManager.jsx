@@ -7,9 +7,15 @@ import History from './History';
 const ExpenseManager = () => {
     const [expenses, setExpenses] = useState(0);
     const [income, setIncome] = useState(0);
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(() => {
+        // getting stored value
+        const saved = localStorage.getItem('ledger');
+        const initialValue = JSON.parse(saved);
+        return initialValue || [];
+      });
 
     useEffect(() => {
+        localStorage.setItem('ledger', JSON.stringify(data));
     }, [data]);
 
     const handleIncome = value => setIncome(value + income);
