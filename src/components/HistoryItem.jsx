@@ -8,7 +8,7 @@ const HistoryItem = ({ id, title, updated_amount, type, handleDelete }) => {
     return (
         <Card key={id} style={{backgroundColor: card_style}} className='my-2'>
             <Card.Body className='d-flex justify-content-between align-items-center border-success'>
-                <Card.Title className='my-1 mx-1'><Button className='btn btn-light rounded-circle fs-4 py-1' value={id} onClick={() => handleDelete(id)}><MdDelete /></Button> {title}</Card.Title>
+                <Card.Title className='my-0.5'><Button className='btn btn-light rounded-circle fs-4 py-1' value={id} onClick={() => handleDelete(id)}><MdDelete /></Button> {title}</Card.Title>
                 {/* <Card.Title className='my-1 mx-1' style={date_style}>{full_date}</Card.Title> */}
                 <Card.Title className='fs-2'>&#8377; {type === "income" ? "+" : "-"}{updated_amount}</Card.Title>
             </Card.Body>

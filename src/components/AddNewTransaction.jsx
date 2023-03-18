@@ -66,7 +66,7 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
                     <Form.Label className='display-6'>Amount</Form.Label>
                     <Form.Control type="number" placeholder='Enter Amount...' value={amount} onChange={(e) => setAmount(e.target.value)} />
                 </Form.Group>
-                <Button className='w-100 btn' variant="primary" type="submit">ADD TRANSACTION</Button>
+                <Button style={{letterSpacing: '1ch'}} className='w-100 btn fw-bold' variant="primary" type="submit">ADD TRANSACTION</Button>
             </Form>
         </div>
     )
