@@ -9,8 +9,18 @@ const AddNewTransaction = ({handleData, handleIncome, handleExpense}) => {
     const calculateTimeStamp = () => {
         // Monday, October 30, 2021 - 12:17pm
         let date = new Date();
+        let day = date.toLocaleString('en-US', { weekday: 'long' });
         let month = date.toLocaleString('en-US', { month: 'long' });
-        let full_date = `${month.slice(0, 3)} ${date.getDate()}, ${date.getFullYear().toString().slice(-2)}`;
+        let year = date.getFullYear();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+        let ampm = hour >= 12 ? 'pm' : 'am';
+        hour = hour % 12;
+        hour = hour ? hour : 12;
+        minute = minute < 10 ? '0' + minute : minute;
+        let seconds = date.getSeconds();
+        let strTime = hour + ':' + minute + ':' + seconds + ' ' + ampm;
+        let full_date = `${day}, ${month} ${date.getDate()}, ${year} - ${strTime}`;
         return full_date;
     }
     const handleSubmit = (e) => {
