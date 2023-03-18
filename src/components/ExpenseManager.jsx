@@ -5,18 +5,34 @@ import Header from './Header';
 import History from './History';
 
 const ExpenseManager = () => {
-    const [expenses, setExpenses] = useState(0);
-    const [income, setIncome] = useState(0);
+    const [expenses, setExpenses] = useState(() => {
+        // getting stored value
+        console.log('local storage called');
+        const saved = localStorage.getItem('expenses');
+        const initialValue = JSON.parse(saved);
+        return initialValue || 0;
+      });
+    const [income, setIncome] = useState(() => {
+        // getting stored value
+        console.log('local storage called');
+        const saved = localStorage.getItem('income');
+        const initialValue = JSON.parse(saved);
+        return initialValue || 0;
+      });
     const [data, setData] = useState(() => {
         // getting stored value
+        console.log('local storage called');
         const saved = localStorage.getItem('ledger');
         const initialValue = JSON.parse(saved);
         return initialValue || [];
       });
 
     useEffect(() => {
+        console.log('local storage updated');
+        localStorage.setItem('expenses', JSON.stringify(expenses));
+        localStorage.setItem('income', JSON.stringify(income));
         localStorage.setItem('ledger', JSON.stringify(data));
-    }, [data]);
+    }, [data, expenses, income]);
 
     const handleIncome = value => setIncome(value + income);
     const handleExpense = value => setExpenses(value + expenses);
