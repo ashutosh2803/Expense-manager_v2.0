@@ -57,7 +57,7 @@ const ExpenseManager = () => {
     const newData = { expenses, income, data };
 
     return (
-        <div className='container w-100 m-auto border border-secondary bg-dark text-white py-3 min-vw-50'>
+        <div style={{width: '100%'}} className='container m-auto border border-secondary bg-dark text-white py-3 min-vw-50'>
             <Header {...newData} />
             <History {...newData} handleDelete={handleDelete} handleDeleteAll={handleDeleteAll} />
             <AddNewTransaction {...newData} handleData={handleData} handleExpense={handleExpense} handleIncome={handleIncome} />
