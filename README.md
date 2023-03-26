@@ -13,4 +13,4 @@ To run the app locally,
 
 ![Expense Manager](https://user-images.githubusercontent.com/40117155/224504047-acc08604-a10c-4c4f-aaba-52b3a02feb84.png)
     
-If you liked my work, give us a star!
+If you liked my work, please give a star!⭐️
