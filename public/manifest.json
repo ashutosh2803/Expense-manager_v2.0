@@ -21,5 +21,14 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "id": "expense-manager-v2",
+  "description": "This is installer for Expense Manager v2",
+  "orientation": "portrait",
+  "lang": "en",
+  "categories": [
+    "finance",
+    "personalization",
+    "productivity"
+  ]
 }
